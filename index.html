@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flores Amarillas by myeya2🌻</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(#fdf6e3, #f8e7c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.fondo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.girasol {
+    position: absolute;
+    animation: caer linear infinite;
+}
+@keyframes caer {
+    0% { transform: translateY(-100px) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+}
+.container {
+    width: 500px;
+    height: 680px;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+}
+.decor-flor {
+    position: absolute;
+    width: 180px;
+    z-index: 5;
+    pointer-events: none;
+}
+.flor1 {
+    top: -60px;
+    left: -60px;
+}
+.flor2 {
+    bottom: -60px;
+    right: -60px;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+}
+.slide.active {
+    display: flex;
+}
+h1 {
+    color: #6b8e23;
+    font-size: 42px;
+    text-align: center;
+}
+.slide p {
+    text-align: center;
+    color: #5c7a2c;
+    font-size: 18px;
+}
+.slide img {
+    width: 460px;
+    max-width: 120%;
+    margin-top: 10px;
+}
+.botones {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.botones button {
+    background: #8fbf5a;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+.carta-slide {
+    justify-content: center;
+    align-items: center;
+}
+.hoja-carta {
+    width: 85%;
+    max-width: 380px;
+    height: 85%;
+    background: #fffef8;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #222;
+    text-align: justify;
+}
+.fecha {
+    text-align: right;
+    margin-bottom: 20px;
+}
+.destinatario {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.hoja-carta p {
+    margin-bottom: 16px;
+}
+.despedida {
+    margin-top: 20px;
+}
+.firma {
+    margin-top: 5px;
+}
+</style>
+</head>
+<body>
+<div class="fondo" id="fondo"></div>
+<div class="container">
+<img class="decor-flor flor1" src="https://png.pngtree.com/png-clipart/20240310/original/pngtree-yellow-flowers-watercolor-png-image_14559868.png?fbclid=IwY2xjawUda2VwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMUJZakRGZzczc01CMlVnMDFzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeC-VC3zLXtngzFrCcmZZbl_BOr-F4s7u4zW1gxhYrtVltZHPiNTHvHfT9vCo_aem_cD7G4d-WA0VGRjD_qbUS5g">
+<img class="decor-flor flor2" src="https://png.pngtree.com/png-clipart/20240310/original/pngtree-yellow-flowers-watercolor-png-image_14559868.png?fbclid=IwY2xjawUda2VwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMUJZakRGZzczc01CMlVnMDFzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeC-VC3zLXtngzFrCcmZZbl_BOr-F4s7u4zW1gxhYrtVltZHPiNTHvHfT9vCo_aem_cD7G4d-WA0VGRjD_qbUS5g"
+<!-- SLIDE 1 -->
+<div class="slide active">
+    <h1>Para mi leoncito de rizos hermosos 💛</h1>
+    <p>Un pequeño detalle para ti...</p>
+    <img src="https://i.pinimg.com/736x/43/e7/98/43e798ebc28fa84a245c0997434303d0.jpg">
+    <div class="botones">
+        <button onclick="nextSlide()">Siguiente ➜</button>
+    </div>
+</div>
+<div class="slide">
+    <p>Aunque sean virtuales, que sus <br> pétalos crucen la distancia hasta ti 🌻</p>
+    <img src="https://i.pinimg.com/736x/fa/f0/de/faf0deb3f58041b992956d4719a20123.jpg">
+    <div class="botones">
+        <button onclick="prevSlide()">←</button>
+        <button onclick="nextSlide()">→</button>
+    </div>
+</div>
+<div class="slide">
+    <p>Desde que llegaste, mi muñequita,<br>hasta las flores más sencillas florecen con una alegría que antes no sabía ver 💖</p>
+    <img src="https://i.pinimg.com/1200x/29/b2/d2/29b2d2d1d1e3c1adb5d2574afe51fbb1.jpg">
+    <div class="botones">
+        <button onclick="prevSlide()">←</button>
+        <button onclick="nextSlide()">→</button>
+    </div>
+</div>
+<div class="slide">
+    <p>Lo eres todo para mi ✨</p>
+    <img src="https://i.pinimg.com/736x/20/27/93/20279316efe9954886329d45d185f0a7.jpg">
+    <div class="botones">
+        <button onclick="prevSlide()">←</button>
+        <button onclick="goTo(4)">Abrir carta 💌</button>
+    </div>
+</div>
+<div class="slide carta-slide">
+    <div class="hoja-carta">
+        <div class="fecha">21 de septiembre 🌻</div>
+        <p class="destinatario"><strong>Querida futura esposa mia
+        </strong></p>
+<p>
+    Si pudiera reunir en un solo lugar todo lo hermoso que existe en este mundo, estoy seguro de que, al mirarlo, encontraría tu rostro entre cada maravilla.
+    Porque tú eres mi pedacito de cielo, mi alegría más pura y la ternura que le da sentido a mis días. No hay flor, estrella ni amanecer que no me recuerde a ti, 
+    mi muñequita de rizos, si tuviera que agradecerle a la vida por un solo regalo, te elegiría a ti una y mil veces
+</p>
+<p>
+    Sé que la vida no siempre ha sido amable contigo, que has tenido que atravesar días que quizás te hicieron sentir cansada y noches en las que seguir adelante no fue sencillo.
+    Y, aun así, aquí estás, con ese corazón tan hermoso que tienes, regalándole luz al mundo sin siquiera darte cuenta. No sabes cuánto admiro tu fortaleza.
+    Ojalá pudiera tomar cada tristeza que te ha dolido y convertirla en flores para que nunca vuelvas a sentirte sola frente a ellas, pero, mientras no pueda hacerlo, quiero que recuerdes que no tienes que cargar con todo siempre. 
+    Puedes descansar, puedes llorar, puedes sentirte pequeña; y aun así seguirás siendo mi persona maravillosa. Confío en ti, en tus pasos y en todo lo que aún te espera.
+    Vas a superar lo que venga, no porque tengas que ser fuerte a cada instante, sino porque mereces un futuro lleno del mismo amor que tú has dado
+</p>
+<p>
+    Feliz 21 de septiembre, mi pedacito de cheescake, que estas flores amarillas, aunque lleguen a ti a través de una pantalla, te recuerden lo profundamente querida que eres y la alegría tan inmensa que trajiste a mi vida. 
+    Y feliz aniversario, mi amor, por estos dos años de haberte encontrado, de compartir momentos y de tener la dicha de quererte, si pudiera volver al principio, volvería a elegirte sin pensarlo, porque cada día a tu lado, incluso desde la distancia, es un regalo que atesoro con todo mi corazón. 
+    Gracias por existir, por ser tú y por darle tanta luz a mi mundo. Ojalá la vida me permita seguir acompañándote, celebrando tus alegrías y sosteniéndote en los días difíciles.
+    Te amo, mi nubecita... Que extraño y precioso es que, entre tantas personas y tantos caminos posibles, la vida me haya llevado hasta ti. No quiero acostumbrarme jamás a tu ausencia, quiero seguir asombrándome de ti, de tu risa, de tus rizos y de esa forma tan tuya de hacerme sentir que el mundo todavía guarda cosas bonitas. Si amarte es una casualidad, es la casualidad que más agradezco
+</p>
+        <p class="despedida">Con mucho amor,</p>
+        <p class="firma"><strong>Matthew 💛</strong></p>
+    </div>
+    <div class="botones">
+        <button onclick="goTo(0)">🏠 Inicio</button>
+        <button onclick="prevSlide()">←</button>
+    </div>
+</div>
+</div>
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+function showSlide(index) {
+    slides[current].classList.remove("active");
+    current = index;
+    slides[current].classList.add("active");
+}
+function nextSlide() {
+    let next = current + 1;
+    if (next >= slides.length) next = 0;
+    showSlide(next);
+}
+function prevSlide() {
+    let prev = current - 1;
+    if (prev < 0) prev = slides.length - 1;
+    showSlide(prev);
+}
+function goTo(index) {
+    showSlide(index);
+}
+const fondo = document.getElementById("fondo");
+for (let i = 0; i < 25; i++) {
+    let flor = document.createElement("img");
+    flor.src = "https://www.pngmart.com/files/4/Sunflower-PNG-HD.png";
+    flor.className = "girasol";
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.animationDuration = (5 + Math.random() * 5) + "s";
+    flor.style.width = (25 + Math.random() * 35) + "px";
+    fondo.appendChild(flor);
+}
+</script>
+</body>
+</html>
